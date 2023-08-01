@@ -8,7 +8,6 @@ function App() {
 
     const isActive = useRef(false);
     const [isFinished, setIsFinished] = useState(false);
-    const [intervalId, setIntervalId] = useState(null);
     const timerRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +16,7 @@ function App() {
     return () => {
         window.removeEventListener('keyup', handleChange);
     }
-  }, []);
+  });
 
   const resetTimer = () => {
         setMinutes(0);
